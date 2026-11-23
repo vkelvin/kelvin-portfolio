@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+	<title>Mindanao Radio</title>
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<img src="media/logo.png" class="logo" alt="Mindanao Radio Logo">
+
+			<nav>
+				<ul id="menuList">
+					<li><a href="#Home">Home</a></li>
+					<li><a href="#About">About</a></li>
+					<li><a href="#Services">Services</a></li>
+					<li><a href="#Contact">Contact</a></li>
+				</ul>
+			</nav>
+			<img src="media/menu.png" class="menu" onclick="togglemenu()" alt="Menu">
+		</div>
+
+		<section id="Home">			
+			<div class="intro">
+			 <h1>MINDANAO RADIO</h1>
+			</div>
+
+			<div class="banner">  
+				<p>This Is Where You Belong.</p>
+			</div>	
+
+			<div class="action-buttons"> 
+				<button type="button">Subscribe</button>
+				<button type="button">Like Our Page</button>
+			</div>
+
+			<div class="effects">
+				<img src="media/effects.gif" alt="Audio Effects">
+			</div>
+
+			<div class="v1"></div>
+		</section>
+
+		<section id="About">
+			<div class="intro2">
+				<h1>About Us</h1>
+			</div>
+
+			<div class="column1">
+				<div class="statement">
+					<h2>Mindanao radio?</h2>
+					<p>Mindanao Radio is a community station located in Kitale but Broadcasting across the globe</p>
+				</div>
+			</div>
+
+			<div class="column2">
+				<div class="statement">
+					<h2>Our mission</h2>
+					<p>Our mission is to give the youth a place where they belong. For this reason we are set on making sure the youth are heard and that their voice matters.</p>
+				</div>
+			</div>
+
+			<div class="column3">
+				<div class="statement">
+					<h2>Our Vision</h2>
+					<p>To offer world class entertainment in music by playing requested tracks and top notch new and classical Hits.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="Services">
+			<div class="intro3">
+				<h1>Our Services</h1>
+			</div>
+
+			<div class="column5">
+				<div class="one">
+					<ul>
+						<li><h2>Facilitating dissemination of critical information to the community.</h2></li>
+						<li><h2>Entertaining our audiences via our dynamic music playlists.</h2></li>
+						<li><h2>Voicing out concerns of the society to those with the capacity to help</h2></li>
+					</ul>
+				</div>
+
+				<div class="two">
+					<ul>
+						<li><h2>We support outreach programs in the society whose efforts are geared towards education and community health</h2></li>
+						<li><h2>Product promotion (trade and investment in the society)</h2></li>
+						<li><h2>Providing a platform for the nurturing and discovery of talents in the community</h2></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="Contact">
+			<div class="intro4">
+				<h1>Our Contacts</h1>
+			</div>
+			
+			<div class="column5">
+				<div class="one">
+					<h2>Talk to us</h2>
+					<p>Send us an Email or follow us on these social media platforms.<br>
+					facebook<br>twitter<br>instagram<br>youtube<br> You can also send in a song request and we will <br>play it for you and also add it to our playlist</p>
+
+					<!-- Add font awesome icons -->
+					<a href="#" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-youtube"></a>
+				</div>
+
+				<div class="two">
+					<div class="fcf-body">
+						<div id="fcf-form">
+							<h3 class="fcf-h3">Contact us</h3>
+
+							<form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+								<div class="fcf-form-group">
+									<label for="Name" class="fcf-label">Your name</label>
+									<div class="fcf-input-group">
+										<input type="text" id="Name" name="Name" class="fcf-form-control" required>
+									</div>
+								</div>
+
+								<div class="fcf-form-group">
+									<label for="Email" class="fcf-label">Your email address</label>
+									<div class="fcf-input-group">
+										<input type="email" id="Email" name="Email" class="fcf-form-control" required>
+									</div>
+								</div>
+
+								<div class="fcf-form-group">
+									<label for="Message" class="fcf-label">Your message</label>
+									<div class="fcf-input-group">
+										<textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+									</div>
+								</div>
+
+								<div class="fcf-form-group">
+									<button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="footer">
+			<div class="play">  			
+				<img src="media/play1.png" id="press" alt="Play button">
+				<p>play stream</p>
+			</div>
+		</div>
+	</div>
+
+	<audio id="song">
+		<source src="http://stream.zeno.fm/eezdhp4yx1zuv" type="audio/mp3">
+	</audio>
+
+	<script>
+		var song = document.getElementById("song");
+		var icon = document.getElementById("press");
+
+		icon.onclick = function() {
+			if (song.paused) {
+				song.play();
+				icon.src = "media/pause1.png";
+			} else {
+				song.pause();
+				icon.src = "media/play1.png";
+			}
+		}
+		
+		var menuList = document.getElementById("menuList");
+		menuList.style.maxHeight = "0px";
+
+		
+
+		function togglemenu() {
+    let menuList = document.getElementById("menuList");
+    menuList.style.maxHeight = menuList.style.maxHeight === "0px" ? "250px" : "0px";
+}
+	</script>
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+	<title>Mindanao Radio</title>
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<img src="media/logo.png" class="logo" alt="Mindanao Radio Logo">
+
+			<nav>
+				<ul id="menuList">
+					<li><a href="#Home">Home</a></li>
+					<li><a href="#About">About</a></li>
+					<li><a href="#Services">Services</a></li>
+					<li><a href="#Contact">Contact</a></li>
+				</ul>
+			</nav>
+			<img src="media/menu.png" class="menu" onclick="togglemenu()" alt="Menu">
+		</div>
+
+		<section id="Home">			
+			<div class="intro">
+			 <h1>MINDANAO RADIO</h1>
+			</div>
+
+			<div class="banner">  
+				<p>This Is Where You Belong.</p>
+			</div>	
+
+			<div class="action-buttons"> 
+				<button type="button">Subscribe</button>
+				<button type="button">Like Our Page</button>
+			</div>
+
+			<div class="effects">
+				<img src="media/effects.gif" alt="Audio Effects">
+			</div>
+
+			<div class="v1"></div>
+		</section>
+
+		<section id="About">
+			<div class="intro2">
+				<h1>About Us</h1>
+			</div>
+
+			<div class="column1">
+				<div class="statement">
+					<h2>Mindanao radio?</h2>
+					<p>Mindanao Radio is a community station located in Kitale but Broadcasting across the globe</p>
+				</div>
+			</div>
+
+			<div class="column2">
+				<div class="statement">
+					<h2>Our mission</h2>
+					<p>Our mission is to give the youth a place where they belong. For this reason we are set on making sure the youth are heard and that their voice matters.</p>
+				</div>
+			</div>
+
+			<div class="column3">
+				<div class="statement">
+					<h2>Our Vision</h2>
+					<p>To offer world class entertainment in music by playing requested tracks and top notch new and classical Hits.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="Services">
+			<div class="intro3">
+				<h1>Our Services</h1>
+			</div>
+
+			<div class="column5">
+				<div class="one">
+					<ul>
+						<li><h2>Facilitating dissemination of critical information to the community.</h2></li>
+						<li><h2>Entertaining our audiences via our dynamic music playlists.</h2></li>
+						<li><h2>Voicing out concerns of the society to those with the capacity to help</h2></li>
+					</ul>
+				</div>
+
+				<div class="two">
+					<ul>
+						<li><h2>We support outreach programs in the society whose efforts are geared towards education and community health</h2></li>
+						<li><h2>Product promotion (trade and investment in the society)</h2></li>
+						<li><h2>Providing a platform for the nurturing and discovery of talents in the community</h2></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="Contact">
+			<div class="intro4">
+				<h1>Our Contacts</h1>
+			</div>
+			
+			<div class="column5">
+				<div class="one">
+					<h2>Talk to us</h2>
+					<p>Send us an Email or follow us on these social media platforms.<br>
+					facebook<br>twitter<br>instagram<br>youtube<br> You can also send in a song request and we will <br>play it for you and also add it to our playlist</p>
+
+					<!-- Add font awesome icons -->
+					<a href="#" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-youtube"></a>
+				</div>
+
+				<div class="two">
+					<div class="fcf-body">
+						<div id="fcf-form">
+							<h3 class="fcf-h3">Contact us</h3>
+
+							<form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+								<div class="fcf-form-group">
+									<label for="Name" class="fcf-label">Your name</label>
+									<div class="fcf-input-group">
+										<input type="text" id="Name" name="Name" class="fcf-form-control" required>
+									</div>
+								</div>
+
+								<div class="fcf-form-group">
+									<label for="Email" class="fcf-label">Your email address</label>
+									<div class="fcf-input-group">
+										<input type="email" id="Email" name="Email" class="fcf-form-control" required>
+									</div>
+								</div>
+
+								<div class="fcf-form-group">
+									<label for="Message" class="fcf-label">Your message</label>
+									<div class="fcf-input-group">
+										<textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+									</div>
+								</div>
+
+								<div class="fcf-form-group">
+									<button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="footer">
+			<div class="play">  			
+				<img src="media/play1.png" id="press" alt="Play button">
+				<p>play stream</p>
+			</div>
+		</div>
+	</div>
+
+	<audio id="song">
+		<source src="http://stream.zeno.fm/eezdhp4yx1zuv" type="audio/mp3">
+	</audio>
+
+	<script>
+		var song = document.getElementById("song");
+		var icon = document.getElementById("press");
+
+		icon.onclick = function() {
+			if (song.paused) {
+				song.play();
+				icon.src = "media/pause1.png";
+			} else {
+				song.pause();
+				icon.src = "media/play1.png";
+			}
+		}
+		
+		var menuList = document.getElementById("menuList");
+		menuList.style.maxHeight = "0px";
+
+		
+
+	</script>
+</body>
+</html>
